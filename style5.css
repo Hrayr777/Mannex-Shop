@@ -1,0 +1,11 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mini_button a{
+    color: white;
+}
+
+

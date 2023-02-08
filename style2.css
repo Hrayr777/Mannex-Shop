@@ -1,0 +1,39 @@
+.conteiner1{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 25%;
+}
+.conteiner1 div{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-self: center;
+    align-self: center;
+}
+.conteiner1 div div{
+    width: 470px;
+    height: 100px;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+.conteiner1 h2{
+    font-size: 64px;
+}
+.conteiner1 img{
+    width: 368px;
+    height: 368px;
+    align-self: center;
+}
+.conteiner1 p{
+    margin: 0px;
+    padding: 0px;
+    color: rgba(205,238,255);
+    font-size: 24px;
+    align-self: center;
+
+}

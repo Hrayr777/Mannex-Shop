@@ -1,0 +1,68 @@
+.conteiner1{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 50px;
+    font-size: 24px;
+}
+.mini_cont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+}
+.conteiner1 h2{
+    font-size: 64px;
+    margin-top: 50px;
+}
+pre{
+    margin: 0px;
+    padding: 0px;
+}
+.registration ,.apply,.tocome,.logoff{
+    align-self: center;
+    background: #4BA9FF;
+    color: white;
+    height: 65px;
+    width: 265px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registration a{
+    color: white;
+}
+
+.inputs{
+    display: grid;
+    
+    width: 100%;
+    gap:50px;
+    font-size: 24px;
+}
+.inputs input{
+    height: 65px;
+    width: 265px;
+    
+}
+.conf{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    
+}
+.conf a{
+    
+    align-self: center;
+    color: red;
+}
+
+.inputs div{
+    display: grid;
+    width: 268px;
+}
+.reg{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
