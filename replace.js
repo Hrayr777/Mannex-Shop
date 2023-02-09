@@ -119,7 +119,8 @@ apply.addEventListener("click", () => {
           },
         });
 
-        window.location.href = "/Mannex-Shop/replace.html";
+        window.location.host = "Mannex-Shop";
+        window.location.href="replace.html"
       } else {
         password3_err.innerText = "не правильны пароль";
         password3_err.classList.add("error");
