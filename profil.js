@@ -21,8 +21,9 @@ async function zapros1() {
     
 localStorage.clear()
       
-        window.location.href = "/Mannex-Shop/login.html";
-      
+        
+        window.location.host = "Mannex-Shop";
+        window.location.href="login.html"
    
   });
 }
