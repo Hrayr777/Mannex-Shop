@@ -18,8 +18,8 @@ tocome.addEventListener("click", () => {
       localStorage.setItem('user',`${data[0].id}`)
 
     
-        window.location.href = "/profil.html";
-      
+        window.location.href = "/Mannex-Shop/profil.html";
+        
     }
   }
   zapros1();

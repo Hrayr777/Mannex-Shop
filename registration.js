@@ -80,7 +80,7 @@ registration.addEventListener("click", () => {
           },
           body: JSON.stringify(person),
         });
-        window.location.href = "/login.html";
+        window.location.href = "/Mannex-Shop/login.html";
       } else {
         email_err.innerText = " this email is already in use";
         email_err.classList.add("error");
