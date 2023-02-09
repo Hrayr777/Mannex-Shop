@@ -18,7 +18,7 @@ tocome.addEventListener("click", () => {
       localStorage.setItem('user',`${data[0].id}`)
 
     
-        window.location.href = "http://127.0.0.1:5500/profil.html";
+        window.location.href = "/profil.html";
       
     }
   }

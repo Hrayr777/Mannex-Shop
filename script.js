@@ -74,38 +74,63 @@ async function zapros(url = "https://retoolapi.dev/kDeX9p/data") {
 async function pagination(url = "&") {
   await zapros(`https://retoolapi.dev/kDeX9p/data?${url}`);
   let num = Math.ceil(dataCount / limit);
-  let c=1
-  let g=1
+  let c = 1;
+
   page_div.innerHTML = "";
   for (let i = 1; i <= num; i++) {
-    
-    
     let span = document.createElement("span");
-    span.classList=i-1
+    span.classList = i - 1;
     span.style.paddingLeft = "20px";
     span.innerText = i;
-    if(i>3){span.style.display="none"}
-    span.addEventListener("click", () => {
-      
+    if (i > 3 && i < num) {
+      span.style.display = "none";
+    }
+    if (i === num) span.innerText = "..." + ` ` + i;
+    page_div.append(span);
+    span.addEventListener("click", (e) => {
       menue_for_shop.innerHTML = "";
       getDataWithPage(i, limit, url);
-      if(c>=+page_div.children[i-1].textContent){
-      page_div.children[i].style.display="inline-block"
-      page_div.children[i+1].style.display="inline-block"
-      page_div.children[i-2].style.display="none"
-      page_div.children[i-3].style.display="none"
-    } 
-    if(g==page_div.children[i-1].textContent){
-      page_div.children[i].style.display="none"
-      page_div.children[i+1].style.display="none"
-      page_div.children[i-1].style.display="inline-block"
-      page_div.children[i-2].style.display="inline-block"
-    }
-    c=+page_div.children[i].textContent
-      g=+page_div.children[i-2].textContent
+      if (
+        e.target.previousElementSibling !== null &&
+        e.target.previousElementSibling.previousElementSibling &&
+        e.target.nextElementSibling !== null &&
+        c < +e.target.textContent
+      ) {
+        e.target.nextElementSibling.style.display = "inline-block";
+        e.target.previousElementSibling.previousElementSibling.style.display =
+          "none";
+        if (+e.target.textContent === num - 1) {
+          e.target.nextElementSibling.textContent = `${num}`;
+        }
+        c = +e.target.textContent;
+      } else if (
+        c > +e.target.textContent &&
+        e.target.previousElementSibling !== null
+      ) {
+        e.target.nextElementSibling.nextElementSibling.style.display = "none";
+        e.target.previousElementSibling.style.display = "inline-block";
+        if (+e.target.textContent === num - 2) {
+          e.target.nextElementSibling.nextElementSibling.style.display =
+            "inline-block";
+          e.target.nextElementSibling.nextElementSibling.textContent = `... ${num}`;
+        }
+
+        c = +e.target.textContent;
+      }
+      if (e.target.textContent == `... ${num}`) {
+        for (let i = 0; i < num - 1; i++) {
+          if (page_div.children[i].style.display !== "none") {
+            page_div.children[i].style.display = "none";
+            e.target.textContent = num;
+            e.target.previousElementSibling.style.display = "inline-block";
+            e.target.previousElementSibling.previousElementSibling.style.display =
+              "inline-block";
+            c = num;
+          }
+        }
+      }
+      console.log(c);
     });
-    page_div.append(span);
-    
   }
 }
 
@@ -208,7 +233,7 @@ search_button.addEventListener("click", () => {
   if (array.length > 0) {
     array = array.join("");
     
-   console.log(array)
+   
     getDataWithPage(1, limit, array);
     pagination(array);
   } else {
@@ -218,5 +243,15 @@ search_button.addEventListener("click", () => {
 });
 
 
+
+
+
+// if(g==page_div.children[i-1].textContent){
+//   page_div.children[i].style.display="none"
+//   page_div.children[i+1].style.display="none"
+//   page_div.children[i-1].style.display="inline-block"
+//   page_div.children[i-2].style.display="inline-block"
+// }
+// c=+page_div.children[i].textContent
 
 

@@ -80,7 +80,7 @@ registration.addEventListener("click", () => {
           },
           body: JSON.stringify(person),
         });
-        window.location.href = "http://127.0.0.1:5500/login.html";
+        window.location.href = "/login.html";
       } else {
         email_err.innerText = " this email is already in use";
         email_err.classList.add("error");

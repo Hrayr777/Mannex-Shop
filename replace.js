@@ -119,7 +119,7 @@ apply.addEventListener("click", () => {
           },
         });
 
-        window.location.href = "http://127.0.0.1:5500/replace.html";
+        window.location.href = "/replace.html";
       } else {
         password3_err.innerText = "не правильны пароль";
         password3_err.classList.add("error");
