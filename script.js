@@ -255,3 +255,4 @@ search_button.addEventListener("click", () => {
 // c=+page_div.children[i].textContent
 
 
+console.log(window.location)

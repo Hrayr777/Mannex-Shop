@@ -134,7 +134,6 @@ async function zapros2() {
   const user = localStorage.getItem("user");
   let response = await fetch(`https://retoolapi.dev/pXF605/data/${user}`);
   let data = await response.json();
-
   let join = document.querySelector(".join");
   join.textContent = data.name;
 }
