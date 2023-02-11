@@ -45,6 +45,7 @@ function getDataWithPage(page = 1, limit, url) {
       data.map((item) => {
         let div = document.createElement("div");
         div.classList = "prod";
+        div.data=item.id
         div.innerHTML = `
    
                     <img class="imgs" src="${item.img}" alt="">
@@ -52,7 +53,7 @@ function getDataWithPage(page = 1, limit, url) {
                     <p>${item.info}</p>
                     <div>
                         <div>${item.price}</div> 
-                        <div>Добавить в корзину</div>
+                        <div class="basket">Добавить в корзину</div>
                     `;
         menue_for_shop.append(div);
       })
@@ -244,15 +245,20 @@ search_button.addEventListener("click", () => {
 
 
 
+let array = [];
+let product = document.querySelector(".product");
+product.addEventListener("click", (e) => {
+  if (e.target.textContent == "Добавить в корзину") {
+    if (array.includes(e.target.parentElement.parentElement.data) === false) {
+      array.push(`id=${e.target.parentElement.parentElement.data}&`);
+      localStorage.setItem("basket", array);
+    } else if (
+      array.includes(e.target.parentElement.parentElement.data) === true
+    ) {
+      array.splice(array.indexOf(e.target.parentElement.parentElement.data), 1);
+      localStorage.setItem("basket", array);
+    }
+  }
+});
 
 
-// if(g==page_div.children[i-1].textContent){
-//   page_div.children[i].style.display="none"
-//   page_div.children[i+1].style.display="none"
-//   page_div.children[i-1].style.display="inline-block"
-//   page_div.children[i-2].style.display="inline-block"
-// }
-// c=+page_div.children[i].textContent
-
-
-console.log(window.location)

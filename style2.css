@@ -1,17 +1,17 @@
+
+
+.main_content1{
+    height: 100%;
+}
 .conteiner1{
     display: flex;
     flex-direction: column;
+    height: 100%;
     width: 80%;
-    gap: 25%;
+    gap: 30px;
 }
-.conteiner1 div{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-self: center;
-    align-self: center;
-}
-.conteiner1 div div{
+
+.button {
     width: 470px;
     height: 100px;
     background: red;
@@ -20,6 +20,8 @@
     align-items: center;
     color: white;
     font-size: 24px;
+    justify-self: center;
+    align-self: center;
 }
 .conteiner1 h2{
     font-size: 64px;
@@ -29,11 +31,99 @@
     height: 368px;
     align-self: center;
 }
-.conteiner1 p{
+.p{
     margin: 0px;
     padding: 0px;
     color: rgba(205,238,255);
     font-size: 24px;
     align-self: center;
 
+}
+
+
+
+.plus{
+    pointer-events: none;
+}
+.minus{
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.basket_info{
+    
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+    
+}
+
+.basket_product{
+   margin-top: 20px;
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    color: gray;
+    height: 120px;
+    justify-items: center;
+    align-items: center;
+    
+   
+}
+.basket_product img{
+    height: 80%;
+    width: 30%;
+}
+p{
+    text-align:center;
+}
+.basket_product div{
+    text-align: center;
+    
+   
+}
+.basket_product div:nth-child(4){
+
+    display: flex;
+}
+.basket_product div:nth-child(1){
+display:  flex;
+flex-direction: column;
+
+}
+.basket_product div p{
+    
+    width: 40%;
+}
+.minusbtn{
+  height: 25px;
+  width: 20px;
+  margin-right: 4px ;
+  text-align: center;
+}
+.plusbtn{
+    height: 25px;
+    width: 20px;
+    margin-left: 4px ;
+    text-align: center;
+}
+.input-number{
+    height: 25px;
+    width: 40px;
+    border: none;
+    text-align: center;
 }
